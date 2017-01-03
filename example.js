@@ -1,15 +1,6 @@
-# Natural language flows
-A very simple prototype of Natural Language Flow builder and Natural Language Generator for bots, using edges of contexts, and based on intents/skills defined by the user.
-
-## Installation
-```
-npm install natural-language-flows
-```
-
-## How it works
-```javascript
-// Require the natural language flows
-var nlf = require('natural-language-flows');
+// This is an example how it works
+// var nlf = require('natural-language-flows');
+var nlf = require('./index');
 
 // Initialize the bot
 var bot = new nlf.Bot();
@@ -72,11 +63,9 @@ bot.AddMultipleCommands([
         ]
     }
 }]);
-```
 
-Start a discussion with the bot after skills' training:
+// Start a discussion with the bot
 
-```javascript
 // Printing the full discussion's objects
 esit = bot.answer({text: 'I want to buy a ferrari', context: 'buy-car'});
 console.log(esit);
@@ -89,35 +78,8 @@ console.log(esit);
 
 esit = bot.answer({text: 'yes', context: esit.context});
 console.log(esit);
-```
 
-That will print the complete result object in this way:
-```javascript
-{ text: 'I want to buy a ferrari',
-  intent: true,
-  entities: { action: [ 'buy' ], product: [ 'ferrari' ] },
-  reply: 'Yes, of course! Could you tell me which model of Ferrari? (F12/GTC4/J50/California T/488 GTB)',
-  context: 'car-model' }
-{ text: 'GTC4',
-  intent: true,
-  entities: { model: [ 'GTC4' ] },
-  reply: 'Oh, great! Do you confirm you want to purchase it? (yes/no)',
-  context: 'car-yes-no' }
-{ text: 'Maybe...',
-  intent: null,
-  entities: {},
-  reply: 'Sorry, I do not understand...',
-  context: 'car-yes-no' }
-{ text: 'yes',
-  intent: true,
-  entities: { qresp: [ 'yes' ] },
-  reply: 'Wonderful! A great purchase!',
-  context: 'buy-car' }
-```
 
-To print only the discussion data:
-
-```javascript
 // Only discussion's replies
 esit = bot.answer({text: 'I want to buy a ferrari', context: 'buy-car'});
 console.log('D:', esit.text);
@@ -142,21 +104,3 @@ console.log('R:', esit.reply);
 esit = bot.answer({text: 'yes', context: esit.context});
 console.log('D:', esit.text);
 console.log('R:', esit.reply);
-```
-
-That will print:
-
-```
-D: I want to buy a ferrari
-R: Yes, of course! Could you tell me which model of Ferrari? (F12/GTC4/J50/California T/488 GTB)
-D: GTC4
-R: Oh, great! Do you confirm you want to purchase it? (yes/no)
-D: Maybe...
-R: Sorry, I do not understand...
-D: no
-R: I'm sorry, do you want buy another model? (F12/GTC4/J50/California T/488 GTB)
-D: California T
-R: Oh, great! Do you confirm you want to purchase it? (yes/no)
-D: yes
-R: Wonderful! A great purchase!
-```

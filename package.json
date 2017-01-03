@@ -1,0 +1,28 @@
+{
+  "name": "natural-language-flows",
+  "version": "0.0.1",
+  "description": "A very simple prototype of Natural Language Flow builder and Natural Language Generator for bots, using edges of contexts, and based on intents/skills defined by the user.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidemiceli/natural-language-flows.git"
+  },
+  "keywords": [
+    "bot",
+    "bots",
+    "nlp",
+    "nlg",
+    "natural language processing",
+    "natural language generator",
+    "natural language flows"
+  ],
+  "author": "Davide Miceli <dauwak@gmail.com> (https://github.com/davidemiceli)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidemiceli/natural-language-flows/issues"
+  },
+  "homepage": "https://github.com/davidemiceli/natural-language-flows#readme"
+}
