@@ -1,6 +1,6 @@
 // This is an example how it works
 // var nlf = require('natural-language-flows');
-var nlf = require('./index');
+var nlf = require('../index');
 
 // Initialize the bot
 var bot = new nlf.Bot();
